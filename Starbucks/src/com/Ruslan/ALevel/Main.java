@@ -1,14 +1,13 @@
 package com.Ruslan.ALevel;
 
-import com.Ruslan.ALevel.client.ClientCreator;
+import com.Ruslan.ALevel.coffeeHouse.CoffeeHouse;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ClientCreator clientCreator = new ClientCreator();
-
-        clientCreator.createClients(10);
+        CoffeeHouse coffeeHouse = new CoffeeHouse();
+        coffeeHouse.serveCustomers();
 
     }
 }

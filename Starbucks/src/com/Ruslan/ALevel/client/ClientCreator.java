@@ -14,10 +14,6 @@ public class ClientCreator {
             clients[i] = clientFactory.createClient();
         }
 
-        for (int i = 0; i < clients.length; i++) {
-            System.out.println(clients[i].getName() + ", " + clients[i].getMoney() + ", " + clients[i].getCoffeeToBuy());
-        }
-
         return clients;
     }
 }
