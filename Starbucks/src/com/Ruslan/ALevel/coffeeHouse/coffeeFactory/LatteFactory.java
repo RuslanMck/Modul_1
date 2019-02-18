@@ -1,6 +1,6 @@
 package com.Ruslan.ALevel.coffeeHouse.coffeeFactory;
 
-import com.Ruslan.ALevel.coffeeHouse.coffeeRecipes.Latte;
+import com.Ruslan.ALevel.coffeeHouse.manu.Latte;
 
 public class LatteFactory {
 

@@ -1,4 +1,4 @@
-package com.Ruslan.ALevel.coffeeHouse.coffeeRecipes;
+package com.Ruslan.ALevel.coffeeHouse.manu;
 
 public class Latte extends BaseCoffee {
 

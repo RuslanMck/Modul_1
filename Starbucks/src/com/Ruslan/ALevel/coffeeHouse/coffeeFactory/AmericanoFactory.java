@@ -1,6 +1,6 @@
 package com.Ruslan.ALevel.coffeeHouse.coffeeFactory;
 
-import com.Ruslan.ALevel.coffeeHouse.coffeeRecipes.Americano;
+import com.Ruslan.ALevel.coffeeHouse.manu.Americano;
 
 public class AmericanoFactory {
 
