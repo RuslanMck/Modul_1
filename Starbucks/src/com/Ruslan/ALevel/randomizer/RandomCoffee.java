@@ -1,7 +1,6 @@
 package com.Ruslan.ALevel.randomizer;
 
 import com.Ruslan.ALevel.coffeeHouse.coffeeFactory.CoffeeTypes;
-import com.Ruslan.ALevel.coffeeHouse.coffeeRecipes.BaseCoffee;
 
 import java.util.Random;
 

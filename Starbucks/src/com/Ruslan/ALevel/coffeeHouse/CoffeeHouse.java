@@ -2,8 +2,10 @@ package com.Ruslan.ALevel.coffeeHouse;
 
 import com.Ruslan.ALevel.client.Client;
 import com.Ruslan.ALevel.client.ClientCreator;
+import com.Ruslan.ALevel.coffeeHouse.manu.CoffeePrice;
 import com.Ruslan.ALevel.coffeeHouse.staff.Barista;
 import com.Ruslan.ALevel.coffeeHouse.staff.CoffeeMachine;
+import com.Ruslan.ALevel.coffeeHouse.staff.PaymentTerminal;
 
 import java.util.Random;
 
@@ -14,6 +16,7 @@ public class CoffeeHouse {
     Barista barista = new Barista();
     CoffeeMachine coffeeMachine = new CoffeeMachine();
     Client[] clients = clientCreator.createClients(10);
+    CoffeePrice price = new CoffeePrice();
 
     public void serveCustomers() {
 
@@ -21,14 +24,13 @@ public class CoffeeHouse {
 
         for (int i = 0; i < clients.length; i++){
             int rnd = random.nextInt(2);
-            output.Welcome(clients[i]);
+            output.welcome(clients[i]);
+
             if (rnd == 0 && !coffeeMachine.checkMachine()){
-                coffeeMachine.createCoffee(clients[i].getCoffeeToBuy());
-                output.MachineServe(clients[i]);
+                coffeeMachine.serveCustomers(clients[i], price);
             }
             else {
-                barista.createCoffee(clients[i].getCoffeeToBuy());
-                output.BaristaServe(clients[i]);
+                barista.serveCustomers(clients[i], price);
             }
         }
     }
