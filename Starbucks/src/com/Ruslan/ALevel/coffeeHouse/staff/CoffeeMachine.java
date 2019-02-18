@@ -4,9 +4,11 @@ import com.Ruslan.ALevel.coffeeHouse.coffeeFactory.*;
 import com.Ruslan.ALevel.coffeeHouse.coffeeRecipes.BaseCoffee;
 import com.Ruslan.ALevel.randomizer.RandomBoolean;
 
+import java.util.Random;
+
 public class CoffeeMachine implements CoffeeFactory {
 
-    boolean isWork;
+    boolean isBroke;
 
     LatteFactory latteFactory;
     AmericanoFactory americanoFactory;
@@ -19,8 +21,14 @@ public class CoffeeMachine implements CoffeeFactory {
         espressoFactory = new EspressoFactory(randomBoolean.generate());
     }
 
-    private boolean checkMachine(){
-        return true;
+    public boolean checkMachine() {
+        Random random = new Random();
+        int rnd = random.nextInt(100);
+        if (rnd > 80) {
+            System.out.println("Sorry, coffee machine has broke. (" + rnd + " error).");
+            isBroke = true;
+        } else isBroke = false;
+        return isBroke;
     }
 
     @Override

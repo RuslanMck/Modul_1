@@ -9,25 +9,26 @@ import java.util.Random;
 
 public class CoffeeHouse {
 
+    ConsoleOutput output = new ConsoleOutput();
     ClientCreator clientCreator = new ClientCreator();
     Barista barista = new Barista();
     CoffeeMachine coffeeMachine = new CoffeeMachine();
-
     Client[] clients = clientCreator.createClients(10);
 
-
-    public void serveCustomers(){
+    public void serveCustomers() {
 
         Random random = new Random();
 
         for (int i = 0; i < clients.length; i++){
             int rnd = random.nextInt(2);
-            if (rnd == 0){
-                barista.createCoffee(clients[i].getCoffeeToBuy());
-                System.out.println("Client " + clients[i].getName() + " bought " + clients[i].getCoffeeToBuy() + " from barista.");
-            } else {
+            output.Welcome(clients[i]);
+            if (rnd == 0 && !coffeeMachine.checkMachine()){
                 coffeeMachine.createCoffee(clients[i].getCoffeeToBuy());
-                System.out.println("Client " + clients[i].getName() + " bought " + clients[i].getCoffeeToBuy() + " from coffee machine.");
+                output.MachineServe(clients[i]);
+            }
+            else {
+                barista.createCoffee(clients[i].getCoffeeToBuy());
+                output.BaristaServe(clients[i]);
             }
         }
     }
