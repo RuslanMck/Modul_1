@@ -10,8 +10,8 @@ public class AmericanoFactory {
         this.withSugar = withSugar;
     }
 
-    public Americano createAmericano(){
-        if (withSugar)return new Americano(3,200,30,1);
-        else return new Americano(0,200,30,1);
+    public Americano createAmericano() {
+        if (withSugar) return new Americano(3, 200, 30, 1);
+        else return new Americano(0, 200, 30, 1);
     }
 }

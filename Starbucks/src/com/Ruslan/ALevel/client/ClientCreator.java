@@ -13,7 +13,6 @@ public class ClientCreator {
         for (int i = 0; i < clients.length; i++) {
             clients[i] = clientFactory.createClient();
         }
-
         return clients;
     }
 }
