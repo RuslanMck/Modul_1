@@ -1,7 +1,7 @@
 package com.Ruslan.ALevel.coffeeHouse.staff;
 
 import com.Ruslan.ALevel.client.Client;
-import com.Ruslan.ALevel.coffeeHouse.manu.CoffeePrice;
+import com.Ruslan.ALevel.coffeeHouse.menu.CoffeePrice;
 
 public class PaymentTerminal implements PaymentActions {
 

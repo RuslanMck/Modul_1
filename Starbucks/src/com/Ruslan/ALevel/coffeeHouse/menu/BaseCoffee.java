@@ -1,4 +1,4 @@
-package com.Ruslan.ALevel.coffeeHouse.manu;
+package com.Ruslan.ALevel.coffeeHouse.menu;
 
 public abstract class BaseCoffee {
 
@@ -12,5 +12,21 @@ public abstract class BaseCoffee {
         this.waterPortion = waterPortion;
         this.coffeePortion = coffeePortion;
         this.cup = cup;
+    }
+
+    public int getSugarGram() {
+        return sugarGram;
+    }
+
+    public int getWaterPortion() {
+        return waterPortion;
+    }
+
+    public int getCoffeePortion() {
+        return coffeePortion;
+    }
+
+    public int getCup() {
+        return cup;
     }
 }

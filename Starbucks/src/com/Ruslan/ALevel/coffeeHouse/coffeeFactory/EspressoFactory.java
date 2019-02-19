@@ -1,6 +1,6 @@
 package com.Ruslan.ALevel.coffeeHouse.coffeeFactory;
 
-import com.Ruslan.ALevel.coffeeHouse.manu.Espresso;
+import com.Ruslan.ALevel.coffeeHouse.menu.Espresso;
 
 public class EspressoFactory {
     boolean withSugar;

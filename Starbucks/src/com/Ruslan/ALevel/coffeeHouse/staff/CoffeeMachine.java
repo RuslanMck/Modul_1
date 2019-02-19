@@ -3,8 +3,9 @@ package com.Ruslan.ALevel.coffeeHouse.staff;
 import com.Ruslan.ALevel.client.Client;
 import com.Ruslan.ALevel.coffeeHouse.ConsoleOutput;
 import com.Ruslan.ALevel.coffeeHouse.coffeeFactory.*;
-import com.Ruslan.ALevel.coffeeHouse.manu.BaseCoffee;
-import com.Ruslan.ALevel.coffeeHouse.manu.CoffeePrice;
+import com.Ruslan.ALevel.coffeeHouse.menu.*;
+import com.Ruslan.ALevel.coffeeHouse.storage.StorageManager;
+import com.Ruslan.ALevel.customExceptions.NotEnoughIngredients;
 import com.Ruslan.ALevel.randomizer.RandomBoolean;
 
 import java.util.Random;
@@ -20,6 +21,8 @@ public class CoffeeMachine implements CoffeeFactory, ServiceActions {
     RandomBoolean randomBoolean = new RandomBoolean();
     PaymentTerminal terminal = new PaymentTerminal();
     ConsoleOutput output = new ConsoleOutput();
+    StorageManager storageManager = new StorageManager();
+
 
     public CoffeeMachine() {
         latteFactory = new LatteFactory(randomBoolean.generate());
@@ -41,11 +44,29 @@ public class CoffeeMachine implements CoffeeFactory, ServiceActions {
     public BaseCoffee createCoffee(CoffeeTypes coffeeType) {
         switch (coffeeType) {
             case Latte:
-                return latteFactory.createLatte();
+                Latte latte = latteFactory.createLatte();
+                try {
+                    storageManager.takeIngredient(coffeeType,latte);
+                } catch (NotEnoughIngredients notEnoughIngredients) {
+                    notEnoughIngredients.getMessage();
+                }
+                return latte;
             case Americano:
-                return americanoFactory.createAmericano();
+                Americano americano = americanoFactory.createAmericano();
+                try {
+                    storageManager.takeIngredient(coffeeType,americano);
+                } catch (NotEnoughIngredients notEnoughIngredients) {
+                    notEnoughIngredients.getMessage();
+                }
+                return americano;
             case Espresso:
-                return espressoFactory.createEspresso();
+                Espresso espresso = espressoFactory.createEspresso();
+                try {
+                    storageManager.takeIngredient(coffeeType,espresso);
+                } catch (NotEnoughIngredients notEnoughIngredients) {
+                    notEnoughIngredients.getMessage();
+                }
+                return espresso;
         }
         return null;
     }

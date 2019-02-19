@@ -1,4 +1,4 @@
-package com.Ruslan.ALevel.coffeeHouse.manu;
+package com.Ruslan.ALevel.coffeeHouse.menu;
 
 import com.Ruslan.ALevel.coffeeHouse.coffeeFactory.CoffeeTypes;
 
